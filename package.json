@@ -2,6 +2,7 @@
   "name": "hello_matsubokkuri",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://kaionn.github.io/hello_matsubokkuri",
   "dependencies": {
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
@@ -26,7 +27,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "npm run build && gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
