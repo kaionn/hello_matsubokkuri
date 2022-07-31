@@ -42,7 +42,7 @@ function App() {
         <AppBar position="relative">
           <Toolbar>
             <Typography variant="h6" color="inherit" noWrap>
-              こんにちは
+              Hello Matsubokkuri
             </Typography>
           </Toolbar>
         </AppBar>

@@ -9,7 +9,6 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <App />
-    <button id="button1" />
   </React.StrictMode>
 );
 
