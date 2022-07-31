@@ -1,5 +1,6 @@
 import { AppBar, CssBaseline, Toolbar, Typography, Container } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { spacing } from '@mui/system';
 import { Howl } from 'howler';
 import React from 'react';
