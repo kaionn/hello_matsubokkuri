@@ -11,15 +11,15 @@ jobs:
   deploy:
     runs-on: ubuntu-18.04
     env:
-       working-directory: ./src
-       SUPER_SECRET: ${{ secrets.SuperSecret }}
+      working-directory: ./
+      SUPER_SECRET: ${{ secrets.SuperSecret }}
     steps:
       - uses: actions/checkout@v2
 
       - name: Setup Node
         uses: actions/setup-node@v2
         with:
-          node-version: '16'
+          node-version: "16"
 
       - name: Cache dependencies
         uses: actions/cache@v2
@@ -40,4 +40,3 @@ jobs:
           npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
