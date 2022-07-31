@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/hello_matsubokkuri/static/js/main.87137946.js",
+    "main.js": "/hello_matsubokkuri/static/js/main.a12c7fb7.js",
     "static/js/787.0e2745d1.chunk.js": "/hello_matsubokkuri/static/js/787.0e2745d1.chunk.js",
     "static/media/matubokkuri.png": "/hello_matsubokkuri/static/media/matubokkuri.7ce487b344f286c7bc1f.png",
     "index.html": "/hello_matsubokkuri/index.html",
-    "main.87137946.js.map": "/hello_matsubokkuri/static/js/main.87137946.js.map",
+    "main.a12c7fb7.js.map": "/hello_matsubokkuri/static/js/main.a12c7fb7.js.map",
     "787.0e2745d1.chunk.js.map": "/hello_matsubokkuri/static/js/787.0e2745d1.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.87137946.js"
+    "static/js/main.a12c7fb7.js"
   ]
 }
