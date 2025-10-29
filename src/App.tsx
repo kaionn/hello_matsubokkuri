@@ -14,8 +14,8 @@ function App() {
   const playSound = () => {
     const utterance = new SpeechSynthesisUtterance("コンニチハ");
     utterance.lang = "ja-JP";
-    utterance.rate = 1.2;
-    utterance.pitch = 1.3;
+    utterance.rate = 9;
+    utterance.pitch = 2;
     speechSynthesis.speak(utterance);
   };
 
