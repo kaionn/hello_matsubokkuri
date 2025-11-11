@@ -89,6 +89,68 @@ src/
 - デスクトップ（md）: 192px
 - 大画面（lg）: 256px
 
+## AWSへのデプロイ
+
+このプロジェクトはGitHub Actionsを使用してAWS S3 + CloudFrontに自動デプロイされます。
+
+### セットアップ方法
+
+#### オプション1: Terraformで自動構築（推奨）
+
+Terraformを使用して、必要なAWSリソースを自動的に作成できます。
+
+```bash
+cd terraform
+cp terraform.tfvars.example terraform.tfvars
+# terraform.tfvarsを編集してバケット名を設定
+terraform init
+terraform apply
+```
+
+詳細は [terraform/README.md](terraform/README.md) を参照してください。
+
+#### オプション2: 手動セットアップ
+
+手動でAWSリソースを作成する場合は [docs/AWS_SETUP.md](docs/AWS_SETUP.md) を参照してください。
+
+### 前提条件
+
+1. AWSアカウント
+2. S3バケットの作成
+3. CloudFrontディストリビューションの作成（オプション）
+
+### GitHub Secretsの設定
+
+リポジトリの Settings > Secrets and variables > Actions で以下のシークレットを設定してください：
+
+- `AWS_ACCESS_KEY_ID`: AWSアクセスキーID
+- `AWS_SECRET_ACCESS_KEY`: AWSシークレットアクセスキー
+- `AWS_REGION`: AWSリージョン（例: `ap-northeast-1`）
+- `S3_BUCKET_NAME`: S3バケット名
+- `CLOUDFRONT_DISTRIBUTION_ID`: CloudFrontディストリビューションID（CloudFront使用時）
+
+### デプロイフロー
+
+1. `main`ブランチにpush
+2. GitHub Actionsが自動的にビルドを実行
+3. ビルド成果物をS3にアップロード
+4. CloudFrontのキャッシュを無効化（設定時）
+
+### 手動デプロイ
+
+```bash
+# ビルド
+npm run build
+
+# AWS CLIでS3にアップロード
+aws s3 sync dist/ s3://your-bucket-name --delete
+
+# CloudFrontキャッシュを無効化
+aws cloudfront create-invalidation \
+  --distribution-id YOUR_DISTRIBUTION_ID \
+  --paths "/*"
+```
+
 ## ライセンス
 
 MIT

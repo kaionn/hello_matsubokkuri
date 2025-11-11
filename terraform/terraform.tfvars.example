@@ -1,0 +1,16 @@
+# Copy this file to terraform.tfvars and fill in the values
+
+# AWS Region
+aws_region = "ap-northeast-1"
+
+# S3 bucket name (must be globally unique)
+bucket_name = "your-unique-bucket-name-here"
+
+# Environment
+environment = "production"
+
+# IAM user name
+iam_user_name = "github-actions-deploy"
+
+# Enable CloudFront distribution
+enable_cloudfront = true
