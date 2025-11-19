@@ -51,19 +51,20 @@ function App() {
         <Container
           maxWidth="xl"
           sx={{
-            height: "100vh",
+            minHeight: "100vh",
             display: "flex",
             alignItems: "center",
-            py: { xs: 1, sm: 2 },
+            justifyContent: "center",
+            py: { xs: 2, sm: 3 },
           }}
         >
           <Card
             elevation={8}
             sx={{
               borderRadius: { xs: 2, sm: 3, md: 4 },
-              overflow: "visible",
               width: "100%",
-              maxHeight: "95vh",
+              maxHeight: { xs: "calc(100vh - 32px)", sm: "calc(100vh - 48px)" },
+              overflow: "auto",
               display: "flex",
               alignItems: "center",
             }}
@@ -76,10 +77,12 @@ function App() {
                 sx={{
                   fontWeight: 700,
                   fontSize: { xs: "1.75rem", sm: "2.5rem", md: "3rem" },
+                  color: "#9c27b0",
                   background:
                     "linear-gradient(45deg, #9c27b0 30%, #ff4081 90%)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
                 }}
               >
                 Hello まつぼっくり
@@ -88,7 +91,9 @@ function App() {
               <Box
                 sx={{
                   position: "relative",
-                  display: "inline-block",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
                   my: { xs: 1, sm: 2, md: 3 },
                 }}
               >
@@ -97,8 +102,8 @@ function App() {
                   image="/matsu.png"
                   alt="まつぼっくり"
                   sx={{
-                    width: { xs: "100%", sm: 400, md: 600, lg: 800 },
-                    height: { xs: "auto", sm: 400, md: 600, lg: 800 },
+                    width: { xs: "80%", sm: 300, md: 400, lg: 500 },
+                    height: { xs: "auto", sm: 300, md: 400, lg: 500 },
                     maxWidth: "100%",
                     objectFit: "contain",
                     cursor: "pointer",
